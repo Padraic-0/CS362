@@ -45,12 +45,22 @@ class Kitchen
     end
   end
 
-  def to_s
+  def fridge_volume
     if refrigerator != nil
       fridge_volume = refrigerator.height * refrigerator.width * refrigerator.depth
-      fridge_volume_gallons = fridge_volume * 7.48052
-      "Kitchen. Fridge volume = #{fridge_volume_gallons} gallons"
+    else
+      fridge_volume = 0
     end
+  end
+
+  def to_s
+    "Kitchen. Fridge volume = #{volume_to_gallons} gallons"
+  end
+
+  private
+
+  def volume_to_gallons
+    fridge_volume * 7.48052
   end
 
 end
