@@ -54,7 +54,7 @@ class Kitchen
   end
 
   def to_s
-    "Kitchen. Fridge volume = #{volume_to_gallons} gallons"
+    print_volume_in_gallons
   end
 
   private
@@ -63,6 +63,9 @@ class Kitchen
     fridge_volume * 7.48052
   end
 
+  def print_volume_in_gallons
+    "Kitchen. Fridge volume = #{volume_to_gallons} gallons"
+  end
 end
 
 # Current usage example:
