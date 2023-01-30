@@ -1,3 +1,4 @@
+## Author: Padraic Bergin
 class IceBoxRefrigerator
 
   attr_reader :height, :width, :depth
