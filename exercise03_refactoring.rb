@@ -39,6 +39,10 @@ class Kitchen
     @beverage = args.fetch(:beverage, nil)
   end
 
+  def add_beer_to_refrigerator
+    add_beverage_to_refrigerator
+  end
+
   def add_beverage_to_refrigerator
     if refrigerator != nil
       refrigerator.add(beverage)
@@ -74,7 +78,7 @@ end
 iceboxrefigerator = IceBoxRefrigerator.new
 rootbeer = RootBeer.new
 kitchen = Kitchen.new(:refrigerator => iceboxrefigerator, :beverage => rootbeer)
-kitchen.add_beverage_to_refrigerator
+kitchen.add_beer_to_refrigerator
 puts kitchen
 
 # kitchen has an IceBoxRefrigerator with a RootBeer in it.
