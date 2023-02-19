@@ -1,5 +1,5 @@
 #! /usr/bin/env ruby
-# YOUR NAME
+# padraic bergin
 # Exercise 6: Decorator Pattern
 
 # Do not modify this class. Pretend it is from a library that is "closed."
@@ -27,32 +27,31 @@ class CarService
   end
 end
 
-class CarDecorate < CarService
+class CarDecorator
 
-  def go_decorate
+  def initialize(car)
+    @car = car
+  end
+
+  def go
     puts "awoogah"
     @car.go
     puts "wooosh"
   end
 
-  def execute
-    go_decorate
-  end
 end
 
 hyper_car = HyperCar.new("bzzzz")
 service = CarService.new(hyper_car)
 service.execute
 
-# TODO Exercise, using the decorator pattern. Can you add new behavior without
-# changing the HyperCar class or the CarService class?
-
 
 
 
 
 hyper_car = HyperCar.new("bzzzz")
-second_service = CarDecorate.new(hyper_car)
+cardecorator = CarDecorator.new(hyper_car)
+second_service = CarService.new(cardecorator)
 
 second_service.execute
 # This `execute` call should print:
